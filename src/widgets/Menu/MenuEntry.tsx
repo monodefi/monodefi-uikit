@@ -34,9 +34,10 @@ const MenuEntry = styled.div<Props>`
   background-color: ${({ secondary, theme }) => (secondary ? theme.colors.background : "transparent")};
   color: ${({ theme }) => theme.colors.textSubtle};
   box-shadow: ${({ isActive, theme }) => (isActive ? `inset 4px 0px 0px ${theme.colors.primary}` : "none")};
-
+  width: 300px;
+  
   a {
-    display: flex;
+    display: block;
     align-items: center;
     width: 100%;
     height: 100%;

@@ -36,7 +36,7 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
 
 const BodyWrapper = styled.div`
   position: relative;
-  display: flex;
+  display: block;
 `;
 
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
@@ -139,6 +139,10 @@ const Menu: React.FC<NavProps> = ({
           pushNav={setIsPushed}
           links={links}
           priceLink={priceLink}
+          login={login}
+          logout={logout}
+          account={account}
+          profile={profile}
         />
         <Inner isPushed={isPushed} showMenu={showMenu}>
           {children}

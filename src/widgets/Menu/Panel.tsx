@@ -2,11 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import PanelBody from "./PanelBody";
 import PanelFooter from "./PanelFooter";
-import { PanelProps, PushedProps } from "./types";
+import { PanelProps, PushedProps, Profile } from "./types";
+import { Login } from "../WalletModal/types";
 
 interface Props extends PanelProps, PushedProps {
   showMenu: boolean;
   isMobile: boolean;
+  account?: string;
+  login: Login;
+  profile?: Profile;
+  logout: () => void;
 }
 
 const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`

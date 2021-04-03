@@ -6,10 +6,17 @@ import * as IconModule from "./icons";
 import Accordion from "./Accordion";
 import { MenuEntry, LinkLabel } from "./MenuEntry";
 import MenuLink from "./MenuLink";
-import { PanelProps, PushedProps } from "./types";
+import { PanelProps, PushedProps, Profile } from "./types";
+import Avatar from "./Avatar";
+import { Login } from "../WalletModal/types";
+import UserBlock from "./UserBlock";
 
 interface Props extends PanelProps, PushedProps {
   isMobile: boolean;
+  account?: string;
+  login: Login;
+  profile?: Profile;
+  logout: () => void;
 }
 
 const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
@@ -20,7 +27,15 @@ const Container = styled.div`
   height: 250px;
 `;
 
-const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
+const PanelBody: React.FC<Props> = ({ 
+  isPushed, 
+  pushNav, 
+  isMobile,
+  links, 
+  account,
+  login,
+  logout,
+  profile }) => {
   const location = useLocation();
 
   // Close the menu when a user clicks a link on mobile
@@ -50,6 +65,10 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
                     <MenuLink href={item.href}>{item.label}</MenuLink>
                   </MenuEntry>
                 ))}
+                <MenuEntry>
+                  <UserBlock account={account} login={login} logout={logout} />
+                    {profile && <Avatar profile={profile} />}
+                </MenuEntry>
             </Accordion>
           );
         }
