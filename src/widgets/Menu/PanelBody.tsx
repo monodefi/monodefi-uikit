@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import { SvgProps } from "../../components/Svg";
 import * as IconModule from "./icons";
-import Accordion from "./Accordion";
 import { MenuEntry, LinkLabel } from "./MenuEntry";
 import MenuLink from "./MenuLink";
 import { PanelProps, PushedProps, Profile } from "./types";
@@ -49,18 +48,10 @@ const PanelBody: React.FC<Props> = ({
         const calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
 
         if (entry.items) {
+
           return (
-            <Accordion
-              key={entry.label}
-              isPushed={isPushed}
-              pushNav={pushNav}
-              icon={iconElement}
-              label={entry.label}
-              initialOpenState={entry.initialOpenState}
-              className={calloutClass}
-            >
-              {isPushed &&
-                entry.items.map((item) => (
+            <div>
+                {entry.items.map((item) => (
                   <MenuEntry key={item.href} secondary isActive={item.href === location.pathname} onClick={handleClick}>
                     <MenuLink href={item.href}>{item.label}</MenuLink>
                   </MenuEntry>
@@ -69,7 +60,7 @@ const PanelBody: React.FC<Props> = ({
                   <UserBlock account={account} login={login} logout={logout} />
                     {profile && <Avatar profile={profile} />}
                 </MenuEntry>
-            </Accordion>
+            </div>
           );
         }
         return (
