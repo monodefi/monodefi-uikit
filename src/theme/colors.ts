@@ -17,19 +17,19 @@ export const brandColors = {
 export const lightColors: Colors = {
   ...baseColors,
   ...brandColors,
-  background: "#c6fffb",
-  backgroundDisabled: "#c2fff0",
-  contrast: "#132621",
-  invertedContrast: "#c6fffb",
+  background: "##54ffe2",
+  backgroundDisabled: "##54ffe2",
+  contrast: "#000000",
+  invertedContrast: "##54ffe2",
   input: "#eaf4f0",
   tertiary: "#EFF4F5",
-  text: "#3dd5c0",
-  textDisabled: "#a0d3aa",
-  textSubtle: "#80bab5",
-  borderColor: "#6cffec",
-  card: "#c6fffb",
+  text: "#000000",
+  textDisabled: "#000000",
+  textSubtle: "#000000",
+  borderColor: "#000000",
+  card: "##54ffe2",
   gradients: {
-    bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #e4fee0 100%)",
+    bubblegum: "linear-gradient(139.73deg, #000000 0%, ##54ffe2 100%)",
   },
 };
 
@@ -39,8 +39,8 @@ export const darkColors: Colors = {
   secondary: "#4fffd2",
   background: "#343135",
   backgroundDisabled: "#3c3742",
-  contrast: "#FFFFFF",
-  invertedContrast: "#191326",
+  contrast: "#e3f3fc",
+  invertedContrast: "#132621",
   input: "#483f5a",
   primaryDark: "#0098A1",
   tertiary: "#353547",
@@ -53,7 +53,6 @@ export const darkColors: Colors = {
     bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
   },
 };
-
 
 /*
 import { Colors } from "./types";

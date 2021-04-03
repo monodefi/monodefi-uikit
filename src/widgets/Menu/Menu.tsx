@@ -8,7 +8,7 @@ import Logo from "./Logo";
 import Panel from "./Panel";
 import UserBlock from "./UserBlock";
 import { NavProps } from "./types";
-import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
+import { MENU_HEIGHT } from "./config";
 import Avatar from "./Avatar";
 
 const Wrapper = styled.div`
@@ -21,7 +21,7 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   top: ${({ showMenu }) => (showMenu ? 0 : `-${MENU_HEIGHT}px`)};
   left: 0;
   transition: top 0.2s;
-  display: flex;
+  display: block;
   justify-content: space-between;
   align-items: center;
   padding-left: 8px;
@@ -45,7 +45,7 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   transition: margin-top 0.2s;
   transform: translate3d(0, 0, 0);
   ${({ theme }) => theme.mediaQueries.nav} {
-    margin-left: ${({ isPushed }) => `${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED}px`};
+    margin-left: 50px;
   }
 `;
 

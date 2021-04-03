@@ -1,6 +1,7 @@
 {
-  "name": "@pancakeswap-libs/uikit",
-  "version": "0.10.2",
+  "name": "@monodefi/monodefi-uikit",
+  "version": "0.0.1",
+  "license": "UNLICENSED",
   "description": "Set of UI components for pancake projects",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -42,7 +43,7 @@
     "@storybook/react": "^6.1.16",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.5",
-    "@types/react": "^17.0.1",
+    "@types/react": "^17.0.0",
     "@types/react-router-dom": "^5.1.6",
     "@types/react-transition-group": "^4.4.0",
     "@types/styled-components": "^5.1.4",

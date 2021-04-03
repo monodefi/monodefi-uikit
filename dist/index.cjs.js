@@ -2033,11 +2033,11 @@ var links = [
         items: [
             {
                 label: "Exchange",
-                href: "https://exchange.pancakeswap.finance",
+                href: "https://exchange.mono-finance.com",
             },
             {
                 label: "Liquidity",
-                href: "https://exchange.pancakeswap.finance/#/pool",
+                href: "https://exchange.mono-finance.com/#/pool",
             },
         ],
     },
@@ -2122,7 +2122,7 @@ var links = [
             // },
             {
                 label: "Github",
-                href: "https://github.com/goosedefi/",
+                href: "https://github.com/monodefi/",
             },
             {
                 label: "Docs",
@@ -2348,15 +2348,12 @@ var PanelFooter = function (_a) {
 };
 var templateObject_1$C, templateObject_2$c, templateObject_3$7, templateObject_4$2;
 
-var StyledPanel = styled__default['default'].div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  position: fixed;\n  padding-top: ", ";\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", ";\n  height: 100vh;\n  transition: padding-top 0.2s, width 0.2s;\n  border-right: ", ";\n  z-index: 11;\n  overflow: ", ";\n  transform: translate3d(0, 0, 0);\n\n  ", " {\n    border-right: 2px solid rgba(133, 133, 133, 0.1);\n    width: ", ";\n  }\n"], ["\n  position: fixed;\n  padding-top: ", ";\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", ";\n  height: 100vh;\n  transition: padding-top 0.2s, width 0.2s;\n  border-right: ", ";\n  z-index: 11;\n  overflow: ", ";\n  transform: translate3d(0, 0, 0);\n\n  ", " {\n    border-right: 2px solid rgba(133, 133, 133, 0.1);\n    width: ", ";\n  }\n"])), function (_a) {
+var StyledPanel = styled__default['default'].div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  position: fixed;\n  padding-top: ", ";\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: 100%;\n  height: 240px;\n  transition: padding-top 0.2s, width 0.2s;\n  border-right: ", ";\n  z-index: 11;\n  overflow: ", ";\n  transform: translate3d(0, 0, 0);\n\n  ", " {\n    border-right: 2px solid rgba(133, 133, 133, 0.1);\n    width: ", ";\n  }\n"], ["\n  position: fixed;\n  padding-top: ", ";\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: 100%;\n  height: 240px;\n  transition: padding-top 0.2s, width 0.2s;\n  border-right: ", ";\n  z-index: 11;\n  overflow: ", ";\n  transform: translate3d(0, 0, 0);\n\n  ", " {\n    border-right: 2px solid rgba(133, 133, 133, 0.1);\n    width: ", ";\n  }\n"])), function (_a) {
     var showMenu = _a.showMenu;
     return (showMenu ? "80px" : 0);
 }, function (_a) {
     var theme = _a.theme;
     return theme.nav.background;
-}, function (_a) {
-    var isPushed = _a.isPushed;
-    return (isPushed ? SIDEBAR_WIDTH_FULL + "px" : 0);
 }, function (_a) {
     var isPushed = _a.isPushed;
     return (isPushed ? "2px solid rgba(133, 133, 133, 0.1)" : 0);
@@ -2788,10 +2785,10 @@ var baseColors = {
 var brandColors = {
     binance: "#4fffb1",
 };
-var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#c6fffb", backgroundDisabled: "#c2fff0", contrast: "#132621", invertedContrast: "#c6fffb", input: "#eaf4f0", tertiary: "#EFF4F5", text: "#3dd5c0", textDisabled: "#a0d3aa", textSubtle: "#80bab5", borderColor: "#6cffec", card: "#c6fffb", gradients: {
-        bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #e4fee0 100%)",
+var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "##54ffe2", backgroundDisabled: "##54ffe2", contrast: "#000000", invertedContrast: "##54ffe2", input: "#eaf4f0", tertiary: "#EFF4F5", text: "#000000", textDisabled: "#000000", textSubtle: "#000000", borderColor: "#000000", card: "##54ffe2", gradients: {
+        bubblegum: "linear-gradient(139.73deg, #000000 0%, ##54ffe2 100%)",
     } });
-var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#4fffd2", background: "#343135", backgroundDisabled: "#3c3742", contrast: "#FFFFFF", invertedContrast: "#191326", input: "#483f5a", primaryDark: "#0098A1", tertiary: "#353547", text: "#e3f3fc", textDisabled: "#666171", textSubtle: "#c3d1d4", borderColor: "#4b635a", card: "#27262c", gradients: {
+var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#4fffd2", background: "#343135", backgroundDisabled: "#3c3742", contrast: "#e3f3fc", invertedContrast: "#132621", input: "#483f5a", primaryDark: "#0098A1", tertiary: "#353547", text: "#e3f3fc", textDisabled: "#666171", textSubtle: "#c3d1d4", borderColor: "#4b635a", card: "#27262c", gradients: {
         bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
     } });
 /*
