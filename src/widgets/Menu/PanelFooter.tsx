@@ -13,7 +13,7 @@ import { socials, MENU_ENTRY_HEIGHT } from "./config";
 import { PanelProps, PushedProps } from "./types";
 
 interface Props extends PanelProps, PushedProps {
-  isMobile: boolean
+  isMobile: boolean;
 }
 
 const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
@@ -27,9 +27,8 @@ const Container = styled.div<{ isMobile: boolean }>`
   border-top: solid 2px rgba(133, 133, 133, 0.1);
 `;
 
-
 const SettingsEntry = styled.div<{ isMobile: boolean }>`
-${({ isMobile }) => (isMobile ? "" : "float: left;")};
+  ${({ isMobile }) => (isMobile ? "" : "float: left;")};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -38,7 +37,7 @@ ${({ isMobile }) => (isMobile ? "" : "float: left;")};
 `;
 
 const SocialEntry = styled.div<{ isMobile: boolean }>`
-${({ isMobile }) => (isMobile ? "" : "float: left;")};
+  ${({ isMobile }) => (isMobile ? "" : "float: left;")};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,7 +53,7 @@ const PanelFooter: React.FC<Props> = ({
   currentLang,
   langs,
   setLang,
-  isMobile
+  isMobile,
 }) => {
   if (!isPushed) {
     return (

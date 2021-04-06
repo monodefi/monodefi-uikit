@@ -18,6 +18,12 @@
     "test": "jest",
     "release": "yarn build && np"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn format",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "jest": {
     "setupFilesAfterEnv": [
       "<rootDir>/src/setupTests.js"
@@ -37,7 +43,7 @@
     "@storybook/react": "^6.1.16",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.5",
-    "@types/react": "^17.0.0",
+    "@types/react": "^17.0.1",
     "@types/react-router-dom": "^5.1.6",
     "@types/react-transition-group": "^4.4.0",
     "@types/styled-components": "^5.1.4",

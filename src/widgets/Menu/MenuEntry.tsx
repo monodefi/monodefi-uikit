@@ -5,7 +5,7 @@ export interface Props {
   secondary?: boolean;
   isActive?: boolean;
   theme: DefaultTheme;
-  isMobile?: boolean
+  isMobile?: boolean;
 }
 
 const rainbowAnimation = keyframes`
@@ -34,7 +34,7 @@ const MenuEntry = styled.div<Props>`
   background-color: ${({ secondary, theme }) => (secondary ? theme.colors.background : "transparent")};
   color: ${({ theme }) => theme.colors.textSubtle};
   box-shadow: ${({ isActive, theme }) => (isActive ? `inset 4px 0px 0px ${theme.colors.primary}` : "none")};
-  
+
   a {
     align-items: center;
     width: 100%;

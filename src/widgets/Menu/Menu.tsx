@@ -16,9 +16,9 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
-const StyledNav = styled.nav<{ showMenu: boolean, isMobile: boolean }>`
+const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean }>`
   position: fixed;
-  ${({ isMobile, showMenu }) => (isMobile ? `top: ${(showMenu ? 0 : `-${MENU_HEIGHT}px`)};` : "top:0px;")}
+  ${({ isMobile, showMenu }) => (isMobile ? `top: ${showMenu ? 0 : `-${MENU_HEIGHT}px`};` : "top:0px;")}
   display: ${({ isMobile }) => (isMobile ? "flex" : "none")};
   left: 0;
   transition: top 0.2s;
@@ -27,8 +27,8 @@ const StyledNav = styled.nav<{ showMenu: boolean, isMobile: boolean }>`
   padding-left: 8px;
   padding-right: 16px;
   width: 100%;
-  
-  height: ${({ isMobile }) => (isMobile ?  `${MENU_HEIGHT}` : "0")}px;
+
+  height: ${({ isMobile }) => (isMobile ? `${MENU_HEIGHT}` : "0")}px;
 
   background-color: ${({ theme }) => theme.nav.background};
   border-bottom: solid 2px rgba(133, 133, 133, 0.1);
@@ -107,7 +107,7 @@ const Menu: React.FC<NavProps> = ({
     };
   }, []);
 
-    // Find the home link if provided
+  // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
 
   return (
@@ -142,7 +142,6 @@ const Menu: React.FC<NavProps> = ({
           logout={logout}
           account={account}
           profile={profile}
-
         />
         <Inner isPushed={isPushed} showMenu={showMenu}>
           {children}

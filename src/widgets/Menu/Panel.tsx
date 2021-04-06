@@ -17,20 +17,17 @@ interface Props extends PanelProps, PushedProps {
 
 const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean; isMobile: boolean }>`
   position: fixed;
-  ${({ isMobile, showMenu }) => (isMobile ? 
-    `padding-top: ${(showMenu ? "80px" : 0)};` : 
-    "padding-top:0px;")}
+  ${({ isMobile, showMenu }) => (isMobile ? `padding-top: ${showMenu ? "80px" : 0};` : "padding-top:0px;")}
 
   top: 0;
   left: 0;
-  height: ${({ isMobile }) => (isMobile ? '100vh' : `${MENU_HEIGHT}px`)};
+  height: ${({ isMobile }) => (isMobile ? "100vh" : `${MENU_HEIGHT}px`)};
   flex-direction: column;
   justify-content: space-between;
   flex-shrink: 0;
   background-color: ${({ theme }) => theme.nav.background};
-  
-  ${({ isMobile, isPushed }) => (isMobile ? `width: ${(isPushed ? `${SIDEBAR_WIDTH_FULL}px` : 0)};` : `width:100%;`)}
-  
+
+  ${({ isMobile, isPushed }) => (isMobile ? `width: ${isPushed ? `${SIDEBAR_WIDTH_FULL}px` : 0};` : `width:100%;`)}
 
   transition: padding-top 0.2s, width 0.2s;
   border-right: ${({ isPushed }) => (isPushed ? "2px solid rgba(133, 133, 133, 0.1)" : 0)};

@@ -23,24 +23,15 @@ const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 const Container = styled.div`
   display: block;
   flex-direction: column;
-  width:100%;
+  width: 100%;
 `;
 
 const Connect = styled.div<{ isMobile: boolean }>`
-${({ isMobile }) => (isMobile ? "display: none;" : "")};
-margin-top:8px;
+  ${({ isMobile }) => (isMobile ? "display: none;" : "")};
+  margin-top: 8px;
 `;
 
-
-const PanelBody: React.FC<Props> = ({ 
-  isPushed, 
-  pushNav, 
-  isMobile,
-  links, 
-  account,
-  login,
-  logout,
-  profile }) => {
+const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links, account, login, logout, profile }) => {
   const location = useLocation();
 
   // Close the menu when a user clicks a link on mobile
@@ -48,10 +39,9 @@ const PanelBody: React.FC<Props> = ({
 
   return (
     <Container>
-      
       <Connect isMobile={isMobile}>
         <UserBlock account={account} login={login} logout={logout} />
-                {profile && <Avatar profile={profile} />}
+        {profile && <Avatar profile={profile} />}
       </Connect>
 
       {links.map((entry) => {
@@ -60,16 +50,19 @@ const PanelBody: React.FC<Props> = ({
         const calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
 
         if (entry.items) {
-
           return (
             <div>
-                {
-                entry.items.map((item) => (
-                  <MenuEntry key={item.href} secondary isActive={item.href === location.pathname} onClick={handleClick} isMobile={isMobile}>
-                    <MenuLink href={item.href}>{item.label}</MenuLink>
-                  </MenuEntry>
-                ))
-                }
+              {entry.items.map((item) => (
+                <MenuEntry
+                  key={item.href}
+                  secondary
+                  isActive={item.href === location.pathname}
+                  onClick={handleClick}
+                  isMobile={isMobile}
+                >
+                  <MenuLink href={item.href}>{item.label}</MenuLink>
+                </MenuEntry>
+              ))}
             </div>
           );
         }
@@ -81,9 +74,7 @@ const PanelBody: React.FC<Props> = ({
             </MenuLink>
           </MenuEntry>
         );
-      })
-      }
-      
+      })}
     </Container>
   );
 };
