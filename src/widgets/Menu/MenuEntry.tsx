@@ -1,10 +1,11 @@
 import styled, { keyframes, DefaultTheme } from "styled-components";
-import { MENU_ENTRY_HEIGHT } from "./config";
+import { MENU_ENTRY_HEIGHT, MENU_ENTRY_WIDTH } from "./config";
 
 export interface Props {
   secondary?: boolean;
   isActive?: boolean;
   theme: DefaultTheme;
+  isMobile?: boolean
 }
 
 const rainbowAnimation = keyframes`
@@ -25,8 +26,7 @@ const LinkLabel = styled.div<{ isPushed: boolean }>`
 
 const MenuEntry = styled.div<Props>`
   cursor: pointer;
-  display: block;
-  float: left;
+  ${({ isMobile }) => (isMobile ? "display: flex;" : `display:block;float:right;width:${MENU_ENTRY_WIDTH}px;`)}
   align-items: center;
   height: ${MENU_ENTRY_HEIGHT}px;
   padding: ${({ secondary }) => (secondary ? "0 32px" : "0 16px")};
@@ -34,10 +34,8 @@ const MenuEntry = styled.div<Props>`
   background-color: ${({ secondary, theme }) => (secondary ? theme.colors.background : "transparent")};
   color: ${({ theme }) => theme.colors.textSubtle};
   box-shadow: ${({ isActive, theme }) => (isActive ? `inset 4px 0px 0px ${theme.colors.primary}` : "none")};
-  width: 300px;
   
   a {
-    display: block;
     align-items: center;
     width: 100%;
     height: 100%;
@@ -65,6 +63,7 @@ const MenuEntry = styled.div<Props>`
 MenuEntry.defaultProps = {
   secondary: false,
   isActive: false,
+  isMobile: false,
   role: "button",
 };
 

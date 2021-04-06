@@ -3,6 +3,7 @@ import styled from "styled-components";
 import PanelBody from "./PanelBody";
 import PanelFooter from "./PanelFooter";
 import { PanelProps, PushedProps, Profile } from "./types";
+import { SIDEBAR_WIDTH_FULL, MENU_HEIGHT } from "./config";
 import { Login } from "../WalletModal/types";
 
 interface Props extends PanelProps, PushedProps {
@@ -14,17 +15,23 @@ interface Props extends PanelProps, PushedProps {
   logout: () => void;
 }
 
-const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
+const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean; isMobile: boolean }>`
   position: fixed;
-  padding-top: ${({ showMenu }) => (showMenu ? "80px" : 0)};
+  ${({ isMobile, showMenu }) => (isMobile ? 
+    `padding-top: ${(showMenu ? "80px" : 0)};` : 
+    "padding-top:0px;")}
+
   top: 0;
   left: 0;
-  display: block;
+  height: ${({ isMobile }) => (isMobile ? '100vh' : `${MENU_HEIGHT}px`)};
+  flex-direction: column;
   justify-content: space-between;
   flex-shrink: 0;
   background-color: ${({ theme }) => theme.nav.background};
-  width: 100%;
-  height: 250px;
+  
+  ${({ isMobile, isPushed }) => (isMobile ? `width: ${(isPushed ? `${SIDEBAR_WIDTH_FULL}px` : 0)};` : `width:100%;`)}
+  
+
   transition: padding-top 0.2s, width 0.2s;
   border-right: ${({ isPushed }) => (isPushed ? "2px solid rgba(133, 133, 133, 0.1)" : 0)};
   z-index: 11;
@@ -33,14 +40,12 @@ const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
 
   ${({ theme }) => theme.mediaQueries.nav} {
     border-right: 2px solid rgba(133, 133, 133, 0.1);
-    width: 100%;
   }
 `;
-
 const Panel: React.FC<Props> = (props) => {
-  const { isPushed, showMenu } = props;
+  const { isPushed, showMenu, isMobile } = props;
   return (
-    <StyledPanel isPushed={isPushed} showMenu={showMenu}>
+    <StyledPanel isPushed={isPushed} showMenu={showMenu} isMobile={isMobile}>
       <PanelBody {...props} />
       <PanelFooter {...props} />
     </StyledPanel>

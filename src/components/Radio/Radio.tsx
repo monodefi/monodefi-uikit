@@ -33,12 +33,12 @@ const Radio = styled.input.attrs({ type: "radio" })<RadioProps>`
   vertical-align: middle;
   transition: background-color 0.2s ease-in-out;
   border: 0;
-  border-radius: 50%;
+  border-radius: 0px;
   background-color: ${({ theme }) => theme.colors.input};
   box-shadow: ${({ theme }) => theme.shadows.inset};
 
   &:after {
-    border-radius: 50%;
+    border-radius: 0px;
     content: "";
     height: ${getCheckedScale};
     left: 6px;

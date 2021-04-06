@@ -16,18 +16,20 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
-const StyledNav = styled.nav<{ showMenu: boolean }>`
+const StyledNav = styled.nav<{ showMenu: boolean, isMobile: boolean }>`
   position: fixed;
-  top: ${({ showMenu }) => (showMenu ? 0 : `-${MENU_HEIGHT}px`)};
+  ${({ isMobile, showMenu }) => (isMobile ? `top: ${(showMenu ? 0 : `-${MENU_HEIGHT}px`)};` : "top:0px;")}
+  display: ${({ isMobile }) => (isMobile ? "flex" : "none")};
   left: 0;
   transition: top 0.2s;
-  display: block;
   justify-content: space-between;
   align-items: center;
   padding-left: 8px;
   padding-right: 16px;
   width: 100%;
-  height: ${MENU_HEIGHT}px;
+  
+  height: ${({ isMobile }) => (isMobile ?  `${MENU_HEIGHT}` : "0")}px;
+
   background-color: ${({ theme }) => theme.nav.background};
   border-bottom: solid 2px rgba(133, 133, 133, 0.1);
   z-index: 20;
@@ -36,7 +38,7 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
 
 const BodyWrapper = styled.div`
   position: relative;
-  display: block;
+  display: flex;
 `;
 
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
@@ -44,9 +46,6 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
   transition: margin-top 0.2s;
   transform: translate3d(0, 0, 0);
-  ${({ theme }) => theme.mediaQueries.nav} {
-    margin-left: 50px;
-  }
 `;
 
 const MobileOnlyOverlay = styled(Overlay)`
@@ -108,12 +107,12 @@ const Menu: React.FC<NavProps> = ({
     };
   }, []);
 
-  // Find the home link if provided
+    // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
 
   return (
     <Wrapper>
-      <StyledNav showMenu={showMenu}>
+      <StyledNav showMenu={showMenu} isMobile={isMobile}>
         <Logo
           isPushed={isPushed}
           togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
@@ -143,6 +142,7 @@ const Menu: React.FC<NavProps> = ({
           logout={logout}
           account={account}
           profile={profile}
+
         />
         <Inner isPushed={isPushed} showMenu={showMenu}>
           {children}

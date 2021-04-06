@@ -23,8 +23,14 @@ const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 const Container = styled.div`
   display: block;
   flex-direction: column;
-  height: 250px;
+  width:100%;
 `;
+
+const Connect = styled.div<{ isMobile: boolean }>`
+${({ isMobile }) => (isMobile ? "display: none;" : "")};
+margin-top:8px;
+`;
+
 
 const PanelBody: React.FC<Props> = ({ 
   isPushed, 
@@ -42,6 +48,12 @@ const PanelBody: React.FC<Props> = ({
 
   return (
     <Container>
+      
+      <Connect isMobile={isMobile}>
+        <UserBlock account={account} login={login} logout={logout} />
+                {profile && <Avatar profile={profile} />}
+      </Connect>
+
       {links.map((entry) => {
         const Icon = Icons[entry.icon];
         const iconElement = <Icon width="24px" mr="8px" />;
@@ -51,15 +63,13 @@ const PanelBody: React.FC<Props> = ({
 
           return (
             <div>
-                {entry.items.map((item) => (
-                  <MenuEntry key={item.href} secondary isActive={item.href === location.pathname} onClick={handleClick}>
+                {
+                entry.items.map((item) => (
+                  <MenuEntry key={item.href} secondary isActive={item.href === location.pathname} onClick={handleClick} isMobile={isMobile}>
                     <MenuLink href={item.href}>{item.label}</MenuLink>
                   </MenuEntry>
-                ))}
-                <MenuEntry>
-                  <UserBlock account={account} login={login} logout={logout} />
-                    {profile && <Avatar profile={profile} />}
-                </MenuEntry>
+                ))
+                }
             </div>
           );
         }
@@ -71,7 +81,9 @@ const PanelBody: React.FC<Props> = ({
             </MenuLink>
           </MenuEntry>
         );
-      })}
+      })
+      }
+      
     </Container>
   );
 };

@@ -1,27 +1,22 @@
 {
-  "name": "@pancakeswap-libs/uikit",
-  "version": "0.10.2",
+  "name": "@monodefi/monodefi-uikit",
+  "version": "0.0.2",
+  "license": "UNLICENSED",
   "description": "Set of UI components for pancake projects",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "main": "/home/kali/Documents/Source/defi/monodefi-farms/node_modules/@pancakeswap-libs/uikit/dist/index.cjs.js",
+  "module": "/home/kali/Documents/Source/defi/monodefi-farms/node_modules/@pancakeswap-libs/uikit/dist/index.esm.js",
+  "types": "/home/kali/Documents/Source/defi/monodefi-farms/node_modules/@pancakeswap-libs/uikit/dist/index.d.ts",
   "files": [
-    "dist"
+    "/home/kali/Documents/Source/defi/monodefi-farms/node_modules/@pancakeswap-libs/uikit/dist"
   ],
   "scripts": {
-    "build": "rollup -c && tsc -d --emitDeclarationOnly --declarationDir dist",
+    "build": "rollup -c && tsc -d --emitDeclarationOnly --declarationDir /home/kali/Documents/Source/defi/monodefi-farms/node_modules/@pancakeswap-libs/uikit/dist",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "jest",
     "release": "yarn build && np"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn format",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   },
   "jest": {
     "setupFilesAfterEnv": [
@@ -42,7 +37,7 @@
     "@storybook/react": "^6.1.16",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.5",
-    "@types/react": "^17.0.1",
+    "@types/react": "^17.0.0",
     "@types/react-router-dom": "^5.1.6",
     "@types/react-transition-group": "^4.4.0",
     "@types/styled-components": "^5.1.4",

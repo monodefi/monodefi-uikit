@@ -13,13 +13,13 @@ const StyledAvatar = styled.div`
   position: relative;
 
   img {
-    border-radius: 50%;
+    border-radius: 0px;
   }
 `;
 
 const Pip = styled.div`
   background-color: ${({ theme }) => theme.colors.failure};
-  border-radius: 50%;
+  border-radius: 0px;
   pointer-events: none;
   height: 8px;
   position: absolute;
