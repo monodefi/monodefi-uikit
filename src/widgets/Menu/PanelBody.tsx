@@ -9,6 +9,7 @@ import { PanelProps, PushedProps, Profile } from "./types";
 import Avatar from "./Avatar";
 import { Login } from "../WalletModal/types";
 import UserBlock from "./UserBlock";
+import { MENU_ENTRY_WIDTH } from "./config";
 
 interface Props extends PanelProps, PushedProps {
   isMobile: boolean;
@@ -27,7 +28,7 @@ const Container = styled.div`
 `;
 
 const Connect = styled.div<{ isMobile: boolean }>`
-  ${({ isMobile }) => (isMobile ? "display: none;" : "")};
+  ${({ isMobile }) => (isMobile ? "display: none;" : `display:block;float:right;width:${MENU_ENTRY_WIDTH}px;`)};
   margin-top: 8px;
 `;
 

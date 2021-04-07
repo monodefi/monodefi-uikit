@@ -21,10 +21,11 @@ const { MoonIcon, SunIcon, LanguageIcon } = Icons;
 
 const Container = styled.div<{ isMobile: boolean }>`
   ${({ isMobile }) => (isMobile ? "" : "float: left;")};
-  flex: none;
-  padding: 0px;
   background-color: ${({ theme }) => theme.nav.background};
   border-top: solid 2px rgba(133, 133, 133, 0.1);
+  position:fixed;
+  top:95vh;
+  width:100%;
 `;
 
 const SettingsEntry = styled.div<{ isMobile: boolean }>`
@@ -104,7 +105,7 @@ const PanelFooter: React.FC<Props> = ({
           </Flex>
         </Button>
         <Dropdown
-          position="bottom"
+          position="top"
           target={
             <Button variant="text" startIcon={<LanguageIcon color="textSubtle" width="24px" />}>
               <Text color="textSubtle">{currentLang?.toUpperCase()}</Text>
