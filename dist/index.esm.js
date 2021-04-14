@@ -2149,7 +2149,7 @@ var socials = [
 ];
 var MENU_HEIGHT = 64;
 var MENU_ENTRY_HEIGHT = 48;
-var MENU_ENTRY_WIDTH = 180;
+var MENU_ENTRY_WIDTH = 120;
 var SIDEBAR_WIDTH_FULL = 240;
 
 var rainbowAnimation = keyframes(templateObject_1$z || (templateObject_1$z = __makeTemplateObject(["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"], ["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"])));
@@ -2157,7 +2157,7 @@ var LinkLabel = styled.div(templateObject_2$a || (templateObject_2$a = __makeTem
     var isPushed = _a.isPushed, theme = _a.theme;
     return (isPushed ? theme.colors.textSubtle : "transparent");
 });
-var MenuEntry = styled.div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  cursor: pointer;\n  ", "\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: ", ";\n  background-color: ", ";\n  color: ", ";\n  box-shadow: ", ";\n  \n  a {\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"], ["\n  cursor: pointer;\n  ", "\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: ", ";\n  background-color: ", ";\n  color: ", ";\n  box-shadow: ", ";\n  \n  a {\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"])), function (_a) {
+var MenuEntry = styled.div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  cursor: pointer;\n  ", "\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: ", ";\n  background-color: ", ";\n  color: ", ";\n  box-shadow: ", ";\n\n  a {\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"], ["\n  cursor: pointer;\n  ", "\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: ", ";\n  background-color: ", ";\n  color: ", ";\n  box-shadow: ", ";\n\n  a {\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"])), function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? "display: flex;" : "display:block;float:right;width:" + MENU_ENTRY_WIDTH + "px;");
 }, MENU_ENTRY_HEIGHT, function (_a) {
@@ -2441,10 +2441,10 @@ var UserBlock = function (_a) {
 };
 
 var Icons = IconModule;
-var Container$2 = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: block;\n  flex-direction: column;\n  width:100%;\n"], ["\n  display: block;\n  flex-direction: column;\n  width:100%;\n"])));
-var Connect = styled.div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n", ";\nmargin-top:8px;\n"], ["\n", ";\nmargin-top:8px;\n"])), function (_a) {
+var Container$2 = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: block;\n  flex-direction: column;\n  width: 100%;\n"], ["\n  display: block;\n  flex-direction: column;\n  width: 100%;\n"])));
+var Connect = styled.div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  ", ";\n  margin-top: 8px;\n"], ["\n  ", ";\n  margin-top: 8px;\n"])), function (_a) {
     var isMobile = _a.isMobile;
-    return (isMobile ? "display: none;" : "");
+    return (isMobile ? "display: none;" : "display:block;float:right;width:" + MENU_ENTRY_WIDTH + "px;");
 });
 var PanelBody = function (_a) {
     var isPushed = _a.isPushed, pushNav = _a.pushNav, isMobile = _a.isMobile, links = _a.links, account = _a.account, login = _a.login, logout = _a.logout, profile = _a.profile;
@@ -2473,18 +2473,18 @@ var templateObject_1$D, templateObject_2$d;
 
 var Icons$1 = IconModule;
 var MoonIcon = Icons$1.MoonIcon, SunIcon = Icons$1.SunIcon, LanguageIcon = Icons$1.LanguageIcon;
-var Container$3 = styled.div(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  ", ";\n  flex: none;\n  padding: 0px;\n  background-color: ", ";\n  border-top: solid 2px rgba(133, 133, 133, 0.1);\n"], ["\n  ", ";\n  flex: none;\n  padding: 0px;\n  background-color: ", ";\n  border-top: solid 2px rgba(133, 133, 133, 0.1);\n"])), function (_a) {
+var Container$3 = styled.div(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  ", ";\n  background-color: ", ";\n  border-top: solid 2px rgba(133, 133, 133, 0.1);\n  position:fixed;\n  top:95vh;\n  width:100%;\n"], ["\n  ", ";\n  background-color: ", ";\n  border-top: solid 2px rgba(133, 133, 133, 0.1);\n  position:fixed;\n  top:95vh;\n  width:100%;\n"])), function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? "" : "float: left;");
 }, function (_a) {
     var theme = _a.theme;
     return theme.nav.background;
 });
-var SettingsEntry = styled.div(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n", ";\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 8px;\n"], ["\n", ";\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 8px;\n"])), function (_a) {
+var SettingsEntry = styled.div(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  ", ";\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 8px;\n"], ["\n  ", ";\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 8px;\n"])), function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? "" : "float: left;");
 }, MENU_ENTRY_HEIGHT);
-var SocialEntry = styled.div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n", ";\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"], ["\n", ";\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"])), function (_a) {
+var SocialEntry = styled.div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  ", ";\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"], ["\n  ", ";\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"])), function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? "" : "float: left;");
 }, MENU_ENTRY_HEIGHT);
@@ -2513,22 +2513,19 @@ var PanelFooter = function (_a) {
                     React.createElement(SunIcon, { color: isDark ? "textDisabled" : "text", width: "24px" }),
                     React.createElement(Text, { color: "textDisabled", mx: "4px" }, "/"),
                     React.createElement(MoonIcon, { color: isDark ? "text" : "textDisabled", width: "24px" }))),
-            React.createElement(Dropdown, { position: "bottom", target: React.createElement(Button, { variant: "text", startIcon: React.createElement(LanguageIcon, { color: "textSubtle", width: "24px" }) },
+            React.createElement(Dropdown, { position: "top", target: React.createElement(Button, { variant: "text", startIcon: React.createElement(LanguageIcon, { color: "textSubtle", width: "24px" }) },
                     React.createElement(Text, { color: "textSubtle" }, currentLang === null || currentLang === void 0 ? void 0 : currentLang.toUpperCase())) }, langs.map(function (lang) { return (React.createElement(MenuButton, { key: lang.code, fullWidth: true, onClick: function () { return setLang(lang); }, 
                 // Safari fix
                 style: { minHeight: "32px", height: "auto" } }, lang.language)); })))));
 };
 var templateObject_1$E, templateObject_2$e, templateObject_3$7;
 
-var StyledPanel = styled.div(templateObject_1$F || (templateObject_1$F = __makeTemplateObject(["\n  position: fixed;\n  ", "\n\n  top: 0;\n  left: 0;\n  height: ", ";\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  \n  ", "\n  \n\n  transition: padding-top 0.2s, width 0.2s;\n  border-right: ", ";\n  z-index: 11;\n  overflow: ", ";\n  transform: translate3d(0, 0, 0);\n\n  ", " {\n    border-right: 2px solid rgba(133, 133, 133, 0.1);\n  }\n"], ["\n  position: fixed;\n  ",
-    "\n\n  top: 0;\n  left: 0;\n  height: ", ";\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  \n  ", "\n  \n\n  transition: padding-top 0.2s, width 0.2s;\n  border-right: ", ";\n  z-index: 11;\n  overflow: ", ";\n  transform: translate3d(0, 0, 0);\n\n  ", " {\n    border-right: 2px solid rgba(133, 133, 133, 0.1);\n  }\n"])), function (_a) {
+var StyledPanel = styled.div(templateObject_1$F || (templateObject_1$F = __makeTemplateObject(["\n  position: fixed;\n  ", "\n\n  top: 0;\n  left: 0;\n  height: ", ";\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n\n  ", "\n\n  transition: padding-top 0.2s, width 0.2s;\n  border-right: ", ";\n  z-index: 11;\n  overflow: ", ";\n  transform: translate3d(0, 0, 0);\n\n  ", " {\n    border-right: 2px solid rgba(133, 133, 133, 0.1);\n  }\n"], ["\n  position: fixed;\n  ", "\n\n  top: 0;\n  left: 0;\n  height: ", ";\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n\n  ", "\n\n  transition: padding-top 0.2s, width 0.2s;\n  border-right: ", ";\n  z-index: 11;\n  overflow: ", ";\n  transform: translate3d(0, 0, 0);\n\n  ", " {\n    border-right: 2px solid rgba(133, 133, 133, 0.1);\n  }\n"])), function (_a) {
     var isMobile = _a.isMobile, showMenu = _a.showMenu;
-    return (isMobile ?
-        "padding-top: " + (showMenu ? "80px" : 0) + ";" :
-        "padding-top:0px;");
+    return (isMobile ? "padding-top: " + (showMenu ? "80px" : 0) + ";" : "padding-top:0px;");
 }, function (_a) {
     var isMobile = _a.isMobile;
-    return (isMobile ? '100vh' : MENU_HEIGHT + "px");
+    return (isMobile ? "100vh" : MENU_HEIGHT + "px");
 }, function (_a) {
     var theme = _a.theme;
     return theme.nav.background;
@@ -2554,7 +2551,7 @@ var Panel = function (props) {
 var templateObject_1$F;
 
 var Wrapper$1 = styled.div(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
-var StyledNav = styled.nav(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  position: fixed;\n  ", "\n  display: ", ";\n  left: 0;\n  transition: top 0.2s;\n  justify-content: space-between;\n  align-items: center;\n  padding-left: 8px;\n  padding-right: 16px;\n  width: 100%;\n  \n  height: ", "px;\n\n  background-color: ", ";\n  border-bottom: solid 2px rgba(133, 133, 133, 0.1);\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"], ["\n  position: fixed;\n  ", "\n  display: ", ";\n  left: 0;\n  transition: top 0.2s;\n  justify-content: space-between;\n  align-items: center;\n  padding-left: 8px;\n  padding-right: 16px;\n  width: 100%;\n  \n  height: ", "px;\n\n  background-color: ", ";\n  border-bottom: solid 2px rgba(133, 133, 133, 0.1);\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
+var StyledNav = styled.nav(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  position: fixed;\n  ", "\n  display: ", ";\n  left: 0;\n  transition: top 0.2s;\n  justify-content: space-between;\n  align-items: center;\n  padding-left: 8px;\n  padding-right: 16px;\n  width: 100%;\n\n  height: ", "px;\n\n  background-color: ", ";\n  border-bottom: solid 2px rgba(133, 133, 133, 0.1);\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"], ["\n  position: fixed;\n  ", "\n  display: ", ";\n  left: 0;\n  transition: top 0.2s;\n  justify-content: space-between;\n  align-items: center;\n  padding-left: 8px;\n  padding-right: 16px;\n  width: 100%;\n\n  height: ", "px;\n\n  background-color: ", ";\n  border-bottom: solid 2px rgba(133, 133, 133, 0.1);\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
     var isMobile = _a.isMobile, showMenu = _a.showMenu;
     return (isMobile ? "top: " + (showMenu ? 0 : "-" + MENU_HEIGHT + "px") + ";" : "top:0px;");
 }, function (_a) {
@@ -2714,18 +2711,18 @@ var ResetCSS = createGlobalStyle(templateObject_1$J || (templateObject_1$J = __m
 var templateObject_1$J;
 
 var baseColors = {
-    failure: "#ff0000",
-    primary: "#4fffb1",
-    primaryBright: "#4fffb1",
-    primaryDark: "#4fffb1",
-    secondary: "#44ff69",
-    success: "#5aff55",
-    warning: "#FFB237",
+    failure: "#ED4B9E",
+    primary: "#239CA2",
+    primaryBright: "#29BCC2",
+    primaryDark: "#239CA2",
+    secondary: "#5CC5B0",
+    success: "#6EECD3",
+    warning: "#5CC5B0",
 };
 var brandColors = {
-    binance: "#4fffb1",
+    binance: "#F0B90B",
 };
-var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", contrast: "#191326", invertedContrast: "#FFFFFF", input: "#eeeaf4", tertiary: "#EFF4F5", text: "#166265", textDisabled: "#5CC5B0", textSubtle: "#397B6E ", borderColor: "#E9EAEB", card: "#FFFFFF", gradients: {
+var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", contrast: "#191326", invertedContrast: "#FFFFFF", input: "#eeeaf4", tertiary: "#EFF4F5", text: "#166265", textDisabled: "#5CC5B0", textSubtle: "#166265 ", borderColor: "#E9EAEB", card: "#FFFFFF", gradients: {
         bubblegum: "linear-gradient(139.73deg, #95E1E4 0%,  #29BCC2 100%)",
     } });
 var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#6EECD3", background: "#343135", backgroundDisabled: "#3c3742", contrast: "#FFFFFF", invertedContrast: "#191326", input: "#166265", primaryDark: "#0098A1", tertiary: "#353547", text: "#95E1E4", textDisabled: "#666171", textSubtle: "#c9c4d4", borderColor: "#524B63", card: "#27262c", gradients: {

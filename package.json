@@ -3,14 +3,14 @@
   "version": "0.0.2",
   "license": "UNLICENSED",
   "description": "Set of UI components for pancake projects",
-  "main": "/home/kali/Documents/Source/defi/monodefi-amm/node_modules/@pancakeswap-libs/uikit/dist/index.cjs.js",
-  "module": "/home/kali/Documents/Source/defi/monodefi-amm/node_modules/@pancakeswap-libs/uikit/dist/index.esm.js",
-  "types": "/home/kali/Documents/Source/defi/monodefi-amm/node_modules/@pancakeswap-libs/uikit/dist/index.d.ts",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "/home/kali/Documents/Source/defi/monodefi-amm/node_modules/@pancakeswap-libs/uikit/dist"
+    "dist"
   ],
   "scripts": {
-    "build": "rollup -c && tsc -d --emitDeclarationOnly --declarationDir /home/kali/Documents/Source/defi/monodefi-amm/node_modules/@pancakeswap-libs/uikit/dist",
+    "build": "rollup -c && tsc -d --emitDeclarationOnly --declarationDir dist",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
     "storybook": "start-storybook -p 6006",
