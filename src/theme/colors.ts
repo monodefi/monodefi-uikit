@@ -54,7 +54,6 @@ export const darkColors: Colors = {
   },
 };
 
-
 /*
 import { Colors } from "./types";
 
