@@ -93,7 +93,10 @@ export const darkColors: Colors = {
     bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
   },
 };
+<<<<<<< HEAD
 */
+=======
+>>>>>>> 2965cdfbde7702aaf1faa6edf89143976c903893
 
 /*
 import { Colors } from "./types";
